@@ -1,3 +1,7 @@
+import sys
+
+sys.setrecursionlimit(3000)
+
 def fib_memo(n, memo={}):
     """
     Calculate the nth Fibonacci number using memoization to optimize.
