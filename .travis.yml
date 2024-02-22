@@ -12,6 +12,3 @@ jobs:
     - stage: "Stage 3"
       name: "Heavy Calculation Part 3"
       script: python3 heavy_calculation_script.py
-env:
-  global:
-    - SOME_ENV_VARIABLE=value
