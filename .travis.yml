@@ -33,3 +33,5 @@ jobs:
     - stage: "Stage 10"
       name: "Heavy Calculation Part 10"
       script: python3 heavy_calculation_script.py
+
+      # Trigger a build. 
