@@ -2,28 +2,25 @@ import sys
 
 sys.setrecursionlimit(3000)
 
-def fib_memo(n, memo={}):
-    """
-    Calculate the nth Fibonacci number using memoization to optimize.
-    :param n: The nth Fibonacci number to calculate.
-    :param memo: Dictionary to store previously calculated Fibonacci numbers.
-    :return: The nth Fibonacci number.
-    """
-    if n in memo:
-        return memo[n]
-    if n <= 2:
+def fib_memo(curr, memo={}):
+    if curr in memo:
+        return memo[curr]
+    if curr <= 2:
         return 1
-    memo[n] = fib_memo(n-1, memo) + fib_memo(n-2, memo)
-    return memo[n]
+    memo[curr] = fib_memo(curr-1, memo) + fib_memo(curr-2, memo)
+    return memo[curr]
 
 def heavy_calculation():
-    """
-    Perform heavy calculations by calculating a large Fibonacci number.
-    """
-    n = 1000  # Change this value for larger or smaller calculations
-    print(f"Calculating the {n}th Fibonacci number...")
-    fib_number = fib_memo(n)
-    print(f"The {n}th Fibonacci number is: {fib_number}")
+    initial_value = 1000
+    increments = 5
+    curr = initial_value
+
+    for i in range(increments):
+        print(f"Calculating the {curr}th Fibonacci number...")
+        fib_number = fib_memo(curr)
+        print(f"The {curr}th Fibonacci number is: {fib_number}")
+        curr *= 2
 
 if __name__ == "__main__":
+    curr = None 
     heavy_calculation()
