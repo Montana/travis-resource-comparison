@@ -19,8 +19,7 @@ def heavy_calculation():
         print(f"Calculating the {curr}th Fibonacci number...")
         fib_number = fib_memo(curr)
         print(f"The {curr}th Fibonacci number is: {fib_number}")
-        curr *= 2
+        curr += 500
 
 if __name__ == "__main__":
-    curr = None 
     heavy_calculation()
